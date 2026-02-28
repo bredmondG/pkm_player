@@ -7,18 +7,7 @@ import time
 from pathlib import Path
 from typing import List, Dict
 
-MACROS = {
-    "circle": [
-        {"button": "UP", "hold_seconds": 0.5},
-        {"button": "UP", "hold_seconds": 0.5},
-        {"button": "RIGHT", "hold_seconds": 0.5},
-        {"button": "RIGHT", "hold_seconds": 0.5},
-        {"button": "DOWN", "hold_seconds": 0.5},
-        {"button": "DOWN", "hold_seconds": 0.5},
-        {"button": "LEFT", "hold_seconds": 0.5},
-        {"button": "LEFT", "hold_seconds": 0.5},
-    ],
-}
+DEFAULT_MACROS_PATH = Path("macros.json")
 
 
 def parse_args():
@@ -28,12 +17,26 @@ def parse_args():
         nargs="*",
         help="Button names like A, B, UP, DOWN. Provide them in the order to execute.",
     )
-    if MACROS:
-        parser.add_argument(
-            "--macro",
-            choices=sorted(MACROS.keys()),
-            help="Optional macro name to send a predefined sequence (e.g. circle)",
-        )
+    parser.add_argument(
+        "--macro",
+        help="Name of a macro defined in macros.json",
+    )
+    parser.add_argument(
+        "--macro-file",
+        default=str(DEFAULT_MACROS_PATH),
+        help="Path to macros JSON file (default: macros.json)",
+    )
+    parser.add_argument(
+        "--define-macro",
+        nargs=2,
+        metavar=("NAME", "ACTIONS"),
+        help="Create/update a macro using a comma-separated action list (e.g. walk,UP,RIGHT,DOWN,LEFT)",
+    )
+    parser.add_argument(
+        "--list-macros",
+        action="store_true",
+        help="Show available macros and exit",
+    )
     parser.add_argument(
         "--repeat",
         type=int,
@@ -66,7 +69,21 @@ def parse_args():
     return parser.parse_args()
 
 
-def build_actions(args) -> List[Dict[str, float]]:
+def load_macros(path: Path) -> Dict[str, List[Dict[str, float]]]:
+    if not path.exists():
+        return {}
+    try:
+        return json.loads(path.read_text())
+    except json.JSONDecodeError as exc:
+        raise SystemExit(f"Failed to parse macros file {path}: {exc}")
+
+
+def save_macros(path: Path, macros: Dict[str, List[Dict[str, float]]]):
+    path.write_text(json.dumps(macros, indent=2))
+    print(f"Saved macros to {path}")
+
+
+def build_actions(args, macros) -> List[Dict[str, float]]:
     entries: List[Dict[str, float]] = []
     delay = 0.0
 
@@ -82,7 +99,9 @@ def build_actions(args) -> List[Dict[str, float]]:
         delay += hold + args.spacing + extra_delay
 
     if getattr(args, "macro", None):
-        template = MACROS[args.macro]
+        template = macros.get(args.macro)
+        if template is None:
+            raise SystemExit(f"Macro '{args.macro}' not found in {args.macro_file}")
         for _ in range(args.repeat):
             for step in template:
                 button = step["button"]
@@ -96,7 +115,6 @@ def build_actions(args) -> List[Dict[str, float]]:
             for action in args.actions:
                 append_entry(action, args.hold)
 
-    # Normalize delay so the first action starts exactly at requested offset
     if entries:
         first_offset = entries[0]["delay_seconds"]
         if first_offset:
@@ -107,7 +125,34 @@ def build_actions(args) -> List[Dict[str, float]]:
 
 def main():
     args = parse_args()
-    actions_payload = build_actions(args)
+    macro_path = Path(args.macro_file).expanduser().resolve()
+    macros = load_macros(macro_path)
+
+    if args.list_macros:
+        if not macros:
+            print("No macros defined.")
+        else:
+            print("Available macros:")
+            for name in macros:
+                print(f"  - {name}")
+        return
+
+    if args.define_macro:
+        name, actions_str = args.define_macro
+        steps = []
+        for token in actions_str.split(','):
+            token = token.strip().upper()
+            if not token:
+                continue
+            steps.append({"button": token, "hold_seconds": args.hold})
+        macros[name] = steps
+        save_macros(macro_path, macros)
+        return
+
+    if args.macro and args.macro not in macros:
+        raise SystemExit(f"Macro '{args.macro}' not defined. Use --define-macro or edit {macro_path}")
+
+    actions_payload = build_actions(args, macros)
     frame = args.frame if args.frame is not None else int(time.time() * 1000)
     payload = {"frame": frame, "actions": actions_payload}
 

@@ -1,0 +1,4914 @@
+{
+  "circle": [
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    }
+  ],
+  "expanding_circle_10min": [
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "RIGHT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 1.0
+    }
+  ],
+  "oak_first_pokemon": [
+    {
+      "button": "UP",
+      "hold_seconds": 0.5
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 0.5
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 0.5
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 0.5
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 0.4,
+      "delay_seconds": 8.0
+    },
+    {
+      "button": "UP",
+      "hold_seconds": 0.4
+    },
+    {
+      "button": "A",
+      "hold_seconds": 0.2
+    },
+    {
+      "button": "A",
+      "hold_seconds": 0.2
+    },
+    {
+      "button": "A",
+      "hold_seconds": 0.2
+    },
+    {
+      "button": "A",
+      "hold_seconds": 0.2
+    },
+    {
+      "button": "A",
+      "hold_seconds": 0.2
+    },
+    {
+      "button": "A",
+      "hold_seconds": 0.2
+    },
+    {
+      "button": "A",
+      "hold_seconds": 0.2
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 0.4,
+      "delay_seconds": 2.0
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 0.4
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 0.4
+    },
+    {
+      "button": "LEFT",
+      "hold_seconds": 0.4
+    },
+    {
+      "button": "DOWN",
+      "hold_seconds": 0.4
+    }
+  ]
+}

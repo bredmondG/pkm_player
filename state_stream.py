@@ -28,7 +28,7 @@ import signal
 import time
 from dataclasses import dataclass, asdict
 from pathlib import Path
-from typing import Any, Deque, Dict, Iterable, List, Optional
+from typing import Any, Deque, Dict, Iterable, List, Optional, Tuple
 from collections import deque
 
 from pyboy import PyBoy
@@ -135,6 +135,7 @@ class PokemonStateStreamer:
         self._last_action_frame = -1
         self._next_auto_action_frame = 0
         self._last_action_source: Optional[str] = None
+        self._pending_press_logs: List[tuple[int, str, int]] = []
         self._position_history: Deque[tuple[int, int]] = deque(maxlen=60)
         self._overworld_direction_cycle = deque(["RIGHT", "UP", "LEFT", "DOWN"])
         self._battle_step = 0
@@ -194,6 +195,21 @@ class PokemonStateStreamer:
                     }
                 )
         return normalized
+
+    def _drain_pending_press_logs(self) -> None:
+        if not self._pending_press_logs:
+            return
+        ready = []
+        future = []
+        for target_frame, button, hold in self._pending_press_logs:
+            if target_frame <= self._frame:
+                ready.append((target_frame, button, hold))
+            else:
+                future.append((target_frame, button, hold))
+        self._pending_press_logs = future
+        for target_frame, button, hold in ready:
+            print(f"[state_stream] Frame {target_frame}: sending {button} (hold={hold} frames)")
+
 
     def _close_on_signal(self, *_):
         self.shutdown()
@@ -312,22 +328,24 @@ class PokemonStateStreamer:
         specs = self._normalize_actions(actions)
         if not specs:
             return
-        delay_cursor = 0
+        max_end_delay = 0
+        base_frame = self._frame
         for spec in specs:
             button = spec["button"]
             event = BUTTON_MAP.get(button)
             if not event:
                 continue
-            press_delay = delay_cursor + spec["delay_frames"]
+            press_delay = spec["delay_frames"]
             hold_frames = spec["hold_frames"]
             release_event = BUTTON_RELEASE_MAP.get(button)
-            print(f"[state_stream] Frame {self._frame}: sending {button} (delay={press_delay} frames, hold={hold_frames} frames)")
             self._pyboy.send_input(event, delay=press_delay)
             if release_event:
                 self._pyboy.send_input(release_event, delay=press_delay + hold_frames)
-            delay_cursor = press_delay + hold_frames
+            target_frame = base_frame + press_delay
+            self._pending_press_logs.append((target_frame, button, hold_frames))
+            max_end_delay = max(max_end_delay, press_delay + hold_frames)
         if self._last_action_source == "auto":
-            self._next_auto_action_frame = self._frame + delay_cursor
+            self._next_auto_action_frame = base_frame + max_end_delay
 
     def run(self) -> None:
         print(f"[state_stream] Starting ROM {self.rom_path}")
@@ -337,6 +355,7 @@ class PokemonStateStreamer:
                 for _ in range(self.frames_per_tick):
                     self._pyboy.tick()
                     self._frame += 1
+                    self._drain_pending_press_logs()
 
                 state = self.read_state()
                 self.publish_state(state)
