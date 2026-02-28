@@ -28,7 +28,7 @@ import signal
 import time
 from dataclasses import dataclass, asdict
 from pathlib import Path
-from typing import Deque, Dict, Iterable, List, Optional
+from typing import Any, Deque, Dict, Iterable, List, Optional
 from collections import deque
 
 from pyboy import PyBoy
@@ -63,6 +63,21 @@ BUTTON_MAP = {
     "RIGHT": WindowEvent.PRESS_ARROW_RIGHT,
 }
 
+BUTTON_RELEASE_MAP = {
+    "A": WindowEvent.RELEASE_BUTTON_A,
+    "B": WindowEvent.RELEASE_BUTTON_B,
+    "START": WindowEvent.RELEASE_BUTTON_START,
+    "SELECT": WindowEvent.RELEASE_BUTTON_SELECT,
+    "UP": WindowEvent.RELEASE_ARROW_UP,
+    "DOWN": WindowEvent.RELEASE_ARROW_DOWN,
+    "LEFT": WindowEvent.RELEASE_ARROW_LEFT,
+    "RIGHT": WindowEvent.RELEASE_ARROW_RIGHT,
+}
+
+
+def seconds_to_frames(seconds: float, frames_per_tick: int) -> int:
+    return max(0, int(round(seconds * frames_per_tick)))
+
 
 @dataclass
 class GameState:
@@ -85,13 +100,16 @@ class PokemonStateStreamer:
         state_out_path: Optional[Path] = None,
         actions_in_path: Optional[Path] = None,
         save_path: Optional[Path] = None,
+        hold_frames: int = 30,
     ):
         self.rom_path = rom_path
         self.log_path = log_path
         self.frames_per_tick = frames_per_tick
+        self.hold_frames = hold_frames
         self.state_out_path = state_out_path
         self.actions_in_path = actions_in_path
         self.save_path = save_path
+        self.state_path = self.rom_path.with_suffix(self.rom_path.suffix + ".state")
         self._ram_buffer: Optional[io.BytesIO] = None
 
         pyboy_kwargs = {}
@@ -104,8 +122,17 @@ class PokemonStateStreamer:
         self._pyboy = PyBoy(str(self.rom_path), **pyboy_kwargs)
         # Ensure the gameplay window starts fullscreen immediately.
         self._pyboy.send_input(WindowEvent.FULL_SCREEN_TOGGLE)
+        if self.state_path.exists():
+            try:
+                with self.state_path.open("rb") as fh:
+                    self._pyboy.load_state(fh)
+                print(f"[state_stream] Loaded emulator state from {self.state_path}")
+            except Exception as exc:
+                print(f"[state_stream] Failed to load state {self.state_path}: {exc}")
         self._frame = 0
         self._last_action_frame = -1
+        self._next_auto_action_frame = 0
+        self._last_action_source: Optional[str] = None
         self._position_history: Deque[tuple[int, int]] = deque(maxlen=60)
         self._overworld_direction_cycle = deque(["RIGHT", "UP", "LEFT", "DOWN"])
         self._battle_step = 0
@@ -119,6 +146,52 @@ class PokemonStateStreamer:
 
         signal.signal(signal.SIGINT, self._close_on_signal)
         signal.signal(signal.SIGTERM, self._close_on_signal)
+
+    def _normalize_actions(self, actions: Iterable[Any]) -> List[Dict[str, int]]:
+        normalized: List[Dict[str, int]] = []
+        for entry in actions:
+            if isinstance(entry, str):
+                button = entry.upper()
+                normalized.append(
+                    {
+                        "button": button,
+                        "delay_frames": 0,
+                        "hold_frames": self.hold_frames,
+                    }
+                )
+                continue
+            if isinstance(entry, dict):
+                raw_button = entry.get("button") or entry.get("action")
+                if not raw_button:
+                    continue
+                button = str(raw_button).upper()
+                delay_frames = entry.get("delay_frames")
+                if isinstance(delay_frames, (int, float)):
+                    delay_frames = max(0, int(delay_frames))
+                else:
+                    delay_seconds = entry.get("delay_seconds") or entry.get("delay") or 0
+                    if not isinstance(delay_seconds, (int, float)):
+                        delay_seconds = 0
+                    delay_frames = seconds_to_frames(delay_seconds, self.frames_per_tick)
+
+                hold_frames = entry.get("hold_frames")
+                if isinstance(hold_frames, (int, float)):
+                    hold_frames = max(1, int(hold_frames))
+                else:
+                    hold_seconds = entry.get("hold_seconds") or entry.get("hold")
+                    if isinstance(hold_seconds, (int, float)):
+                        hold_frames = max(1, seconds_to_frames(hold_seconds, self.frames_per_tick))
+                    else:
+                        hold_frames = self.hold_frames
+
+                normalized.append(
+                    {
+                        "button": button,
+                        "delay_frames": delay_frames,
+                        "hold_frames": hold_frames,
+                    }
+                )
+        return normalized
 
     def _close_on_signal(self, *_):
         self.shutdown()
@@ -160,7 +233,7 @@ class PokemonStateStreamer:
         tmp_path.write_text(payload)
         tmp_path.replace(self.state_out_path)
 
-    def read_external_actions(self) -> List[str]:
+    def read_external_actions(self) -> List[Any]:
         if not self.actions_in_path or not self.actions_in_path.exists():
             return []
         try:
@@ -181,7 +254,7 @@ class PokemonStateStreamer:
             self.actions_in_path.unlink()
         except FileNotFoundError:
             pass
-        return [str(a).upper() for a in actions]
+        return actions
 
     def _overworld_actions(self, state: GameState) -> List[str]:
         self._position_history.append((state.player_x, state.player_y))
@@ -222,14 +295,35 @@ class PokemonStateStreamer:
     def gather_actions(self, state: GameState) -> List[str]:
         external = self.read_external_actions()
         if external:
+            print(f"[state_stream] Applying external actions at frame {state.frame}: {external}")
+            self._last_action_source = "external"
             return external
-        return self.default_actions(state)
+        if self._frame < self._next_auto_action_frame:
+            return []
+        actions = self.default_actions(state)
+        self._last_action_source = "auto" if actions else None
+        return actions
 
-    def apply_actions(self, actions: Iterable[str]) -> None:
-        for action in actions:
-            event = BUTTON_MAP.get(action)
-            if event:
-                self._pyboy.send_input(event)
+    def apply_actions(self, actions: Iterable[Any]) -> None:
+        specs = self._normalize_actions(actions)
+        if not specs:
+            return
+        delay_cursor = 0
+        for spec in specs:
+            button = spec["button"]
+            event = BUTTON_MAP.get(button)
+            if not event:
+                continue
+            press_delay = delay_cursor + spec["delay_frames"]
+            hold_frames = spec["hold_frames"]
+            release_event = BUTTON_RELEASE_MAP.get(button)
+            print(f"[state_stream] Frame {self._frame}: sending {button} (delay={press_delay} frames, hold={hold_frames} frames)")
+            self._pyboy.send_input(event, delay=press_delay)
+            if release_event:
+                self._pyboy.send_input(release_event, delay=press_delay + hold_frames)
+            delay_cursor = press_delay + hold_frames
+        if self._last_action_source == "auto":
+            self._next_auto_action_frame = self._frame + delay_cursor
 
     def run(self) -> None:
         print(f"[state_stream] Starting ROM {self.rom_path}")
@@ -253,6 +347,14 @@ class PokemonStateStreamer:
             print("[state_stream] Shutting down emulator")
             ram_handle = None
             try:
+                if self.state_path:
+                    try:
+                        self.state_path.parent.mkdir(parents=True, exist_ok=True)
+                        with self.state_path.open("w+b") as state_handle:
+                            self._pyboy.save_state(state_handle)
+                        print(f"[state_stream] Saved emulator state to {self.state_path}")
+                    except Exception as exc:
+                        print(f"[state_stream] Failed to save state {self.state_path}: {exc}")
                 if self.save_path:
                     self.save_path.parent.mkdir(parents=True, exist_ok=True)
                     ram_handle = open(self.save_path, "w+b")
@@ -293,6 +395,12 @@ def parse_args() -> argparse.Namespace:
         default=None,
         help="Optional path to a .sav/.ram file to load on startup and write back on shutdown",
     )
+    parser.add_argument(
+        "--hold-seconds",
+        type=float,
+        default=0.5,
+        help="How long to keep each button pressed before auto-release",
+    )
     return parser.parse_args()
 
 
@@ -312,6 +420,7 @@ def main() -> None:
         if candidate.exists():
             save_path = candidate
 
+    hold_frames = max(1, int(args.hold_seconds * args.frames_per_tick))
     streamer = PokemonStateStreamer(
         rom_path,
         log_path,
@@ -319,6 +428,7 @@ def main() -> None:
         state_out_path=state_out_path,
         actions_in_path=actions_in_path,
         save_path=save_path,
+        hold_frames=hold_frames,
     )
     streamer.run()
 
