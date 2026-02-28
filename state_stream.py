@@ -101,11 +101,13 @@ class PokemonStateStreamer:
         actions_in_path: Optional[Path] = None,
         save_path: Optional[Path] = None,
         hold_frames: int = 30,
+        auto_actions: bool = True,
     ):
         self.rom_path = rom_path
         self.log_path = log_path
         self.frames_per_tick = frames_per_tick
         self.hold_frames = hold_frames
+        self.auto_actions_enabled = auto_actions
         self.state_out_path = state_out_path
         self.actions_in_path = actions_in_path
         self.save_path = save_path
@@ -298,6 +300,8 @@ class PokemonStateStreamer:
             print(f"[state_stream] Applying external actions at frame {state.frame}: {external}")
             self._last_action_source = "external"
             return external
+        if not self.auto_actions_enabled:
+            return []
         if self._frame < self._next_auto_action_frame:
             return []
         actions = self.default_actions(state)
@@ -401,6 +405,11 @@ def parse_args() -> argparse.Namespace:
         default=0.5,
         help="How long to keep each button pressed before auto-release",
     )
+    parser.add_argument(
+        "--disable-auto-actions",
+        action="store_true",
+        help="Disable built-in overworld/battle inputs so only external commands run",
+    )
     return parser.parse_args()
 
 
@@ -429,6 +438,7 @@ def main() -> None:
         actions_in_path=actions_in_path,
         save_path=save_path,
         hold_frames=hold_frames,
+        auto_actions=not args.disable_auto_actions,
     )
     streamer.run()
 
