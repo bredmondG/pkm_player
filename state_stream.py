@@ -29,6 +29,7 @@ import time
 from dataclasses import dataclass, asdict
 from pathlib import Path
 from typing import Any, Deque, Dict, Iterable, List, Optional, Tuple
+from collections import defaultdict
 from collections import deque
 
 from pyboy import PyBoy
@@ -50,6 +51,13 @@ STATE_ADDRESSES: Dict[str, int] = {
     # Party Pokémon 1 HP (stored as big-endian word)
     "party1_cur_hp_hi": 0xD16B,
     "party1_max_hp_hi": 0xD16D,
+    # Additional state bytes
+    "game_state": 0xD730,
+    "text_box_id": 0xCFC6,
+    "joy_ignore": 0xCFC8,
+    "player_direction": 0xD05B,
+    "party_count": 0xD163,
+    "party1_status": 0xD16F,
 }
 
 BUTTON_MAP = {
@@ -89,6 +97,14 @@ class GameState:
     player_y: int
     party1_hp: int
     party1_max_hp: int
+    game_state: int
+    text_box_id: int
+    joy_ignore: int
+    player_direction: int
+    party_count: int
+    party1_status: int
+    dialog_open: bool
+    input_locked: bool
 
 
 class PokemonStateStreamer:
@@ -136,9 +152,14 @@ class PokemonStateStreamer:
         self._next_auto_action_frame = 0
         self._last_action_source: Optional[str] = None
         self._pending_press_logs: List[tuple[int, str, int]] = []
-        self._position_history: Deque[tuple[int, int]] = deque(maxlen=60)
+        self._position_history: Deque[tuple[int, int]] = deque(maxlen=30)
         self._overworld_direction_cycle = deque(["RIGHT", "UP", "LEFT", "DOWN"])
         self._battle_step = 0
+        self._prev_game_state: Optional[GameState] = None
+        self._recent_tiles: Deque[str] = deque(maxlen=200)
+        self.map_learning_path = Path("map_learning.json")
+        self._map_graph: Dict[str, Dict[str, Dict[str, int]]] = self._load_map_learning()
+        self._map_dirty = False
 
         # Make sure log directory exists
         self.log_path.parent.mkdir(parents=True, exist_ok=True)
@@ -149,6 +170,25 @@ class PokemonStateStreamer:
 
         signal.signal(signal.SIGINT, self._close_on_signal)
         signal.signal(signal.SIGTERM, self._close_on_signal)
+
+    def _tile_key(self, map_id: int, x: int, y: int) -> str:
+        return f"{map_id}:{x}:{y}"
+
+    def _load_map_learning(self) -> Dict[str, Dict[str, Dict[str, int]]]:
+        path = self.map_learning_path
+        if path.exists():
+            try:
+                data = json.loads(path.read_text())
+                return data
+            except json.JSONDecodeError:
+                print(f"[state_stream] Failed to parse {path}, starting fresh")
+        return {}
+
+    def _save_map_learning(self) -> None:
+        if not self._map_dirty:
+            return
+        self.map_learning_path.write_text(json.dumps(self._map_graph, indent=2))
+        self._map_dirty = False
 
     def _normalize_actions(self, actions: Iterable[Any]) -> List[Dict[str, int]]:
         normalized: List[Dict[str, int]] = []
@@ -211,6 +251,56 @@ class PokemonStateStreamer:
             print(f"[state_stream] Frame {target_frame}: sending {button} (hold={hold} frames)")
 
 
+    def _update_map_learning(self, state: GameState) -> None:
+        if self._prev_game_state is None:
+            self._prev_game_state = state
+            tile_key = self._tile_key(state.map_id, state.player_x, state.player_y)
+            self._recent_tiles.append(tile_key)
+            return
+
+        prev = self._prev_game_state
+        curr = state
+        prev_key = self._tile_key(prev.map_id, prev.player_x, prev.player_y)
+        curr_key = self._tile_key(curr.map_id, curr.player_x, curr.player_y)
+        if curr_key != prev_key:
+            dx = curr.player_x - prev.player_x
+            dy = curr.player_y - prev.player_y
+            direction = None
+            if curr.map_id != prev.map_id:
+                direction = "WARP"
+            elif dx == 0 and dy == -1:
+                direction = "UP"
+            elif dx == 0 and dy == 1:
+                direction = "DOWN"
+            elif dx == 1 and dy == 0:
+                direction = "RIGHT"
+            elif dx == -1 and dy == 0:
+                direction = "LEFT"
+
+            if direction:
+                entry = self._map_graph.setdefault(prev_key, {})
+                entry[direction] = {"map_id": curr.map_id, "x": curr.player_x, "y": curr.player_y}
+                self._map_dirty = True
+            self._recent_tiles.append(curr_key)
+        self._prev_game_state = state
+
+    def _choose_known_direction(self, tile_key: str) -> Optional[str]:
+        neighbors = self._map_graph.get(tile_key, {})
+        if not neighbors:
+            return None
+        recent_set = set(self._recent_tiles)
+        for direction, dest in neighbors.items():
+            if direction == "WARP":
+                continue
+            dest_key = self._tile_key(dest["map_id"], dest["x"], dest["y"])
+            if dest_key not in recent_set:
+                return direction
+        # fallback to first non-warp neighbor
+        for direction in neighbors:
+            if direction != "WARP":
+                return direction
+        return None
+
     def _close_on_signal(self, *_):
         self.shutdown()
         raise SystemExit
@@ -227,15 +317,33 @@ class PokemonStateStreamer:
         party1_hp = word(STATE_ADDRESSES["party1_cur_hp_hi"])
         party1_max_hp = word(STATE_ADDRESSES["party1_max_hp_hi"])
 
+        map_id = memory[STATE_ADDRESSES["map_id"]]
+        player_x = memory[STATE_ADDRESSES["player_x"]]
+        player_y = memory[STATE_ADDRESSES["player_y"]]
+        game_state = memory[STATE_ADDRESSES["game_state"]]
+        text_box_id = memory[STATE_ADDRESSES["text_box_id"]]
+        joy_ignore = memory[STATE_ADDRESSES["joy_ignore"]]
+        player_direction = memory[STATE_ADDRESSES["player_direction"]]
+        party_count = memory[STATE_ADDRESSES["party_count"]]
+        party1_status = memory[STATE_ADDRESSES["party1_status"]]
+
         return GameState(
             frame=self._frame,
             timestamp=time.time(),
             in_battle=in_battle,
-            map_id=memory[STATE_ADDRESSES["map_id"]],
-            player_x=memory[STATE_ADDRESSES["player_x"]],
-            player_y=memory[STATE_ADDRESSES["player_y"]],
+            map_id=map_id,
+            player_x=player_x,
+            player_y=player_y,
             party1_hp=party1_hp,
             party1_max_hp=party1_max_hp,
+            game_state=game_state,
+            text_box_id=text_box_id,
+            joy_ignore=joy_ignore,
+            player_direction=player_direction,
+            party_count=party_count,
+            party1_status=party1_status,
+            dialog_open=text_box_id != 0,
+            input_locked=joy_ignore != 0,
         )
 
     def log_state(self, state: GameState) -> None:
@@ -278,14 +386,28 @@ class PokemonStateStreamer:
         self._position_history.append((state.player_x, state.player_y))
         stagnated = len(set(self._position_history)) <= 2 and len(self._position_history) == self._position_history.maxlen
 
+        tile_key = self._tile_key(state.map_id, state.player_x, state.player_y)
         if stagnated:
-            # rotate direction cycle when stuck
+            print(f"[state_stream] Frame {self._frame}: overworld stagnation detected, rotating direction")
+            preferred = self._choose_known_direction(tile_key)
+            if preferred:
+                return [preferred]
             self._overworld_direction_cycle.rotate(-1)
             self._position_history.clear()
+
+        # Prefer exploring unknown directions first, using the current cycle order
+        neighbors = self._map_graph.get(tile_key, {})
+        for direction in list(self._overworld_direction_cycle):
+            if direction not in neighbors:
+                return [direction]
 
         # Alternate between walking and tapping A every few frames to interact
         if self._frame % 180 == 0:
             return ["A"]
+        if neighbors:
+            preferred = self._choose_known_direction(tile_key)
+            if preferred:
+                return [preferred]
         return [self._overworld_direction_cycle[0]]
 
     def _battle_actions(self, state: GameState) -> List[str]:
@@ -358,6 +480,9 @@ class PokemonStateStreamer:
                     self._drain_pending_press_logs()
 
                 state = self.read_state()
+                if getattr(self, '_prev_game_state', None) is None:
+                    self._prev_game_state = state
+                self._update_map_learning(state)
                 self.publish_state(state)
 
                 actions = self.gather_actions(state)
@@ -387,6 +512,8 @@ class PokemonStateStreamer:
                 if ram_handle:
                     ram_handle.close()
                 self._pyboy = None
+        if self._map_dirty:
+            self._save_map_learning()
         if not self._log_file.closed:
             self._log_file.close()
 
