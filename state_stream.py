@@ -118,17 +118,20 @@ class PokemonStateStreamer:
         save_path: Optional[Path] = None,
         hold_frames: int = 30,
         auto_actions: bool = True,
+        auto_toggle_path: Optional[Path] = None,
     ):
         self.rom_path = rom_path
         self.log_path = log_path
         self.frames_per_tick = frames_per_tick
         self.hold_frames = hold_frames
         self.auto_actions_enabled = auto_actions
+        self.auto_toggle_path = auto_toggle_path
         self.state_out_path = state_out_path
         self.actions_in_path = actions_in_path
         self.save_path = save_path
         self.state_path = self.rom_path.with_suffix(self.rom_path.suffix + ".state")
         self._ram_buffer: Optional[io.BytesIO] = None
+        self._auto_toggle_mtime: float = 0.0
 
         pyboy_kwargs = {}
         if self.save_path and self.save_path.exists():
@@ -189,6 +192,27 @@ class PokemonStateStreamer:
             return
         self.map_learning_path.write_text(json.dumps(self._map_graph, indent=2))
         self._map_dirty = False
+
+    def _refresh_auto_toggle(self) -> None:
+        if not self.auto_toggle_path:
+            return
+        try:
+            path = self.auto_toggle_path
+            if not path.exists():
+                return
+            mtime = path.stat().st_mtime
+            if mtime <= self._auto_toggle_mtime:
+                return
+            data = json.loads(path.read_text())
+        except Exception:
+            return
+        enabled = data.get("auto_enabled")
+        if isinstance(enabled, bool):
+            if enabled != self.auto_actions_enabled:
+                status = "enabled" if enabled else "disabled"
+                print(f"[state_stream] Auto-actions {status} via {path}")
+            self.auto_actions_enabled = enabled
+            self._auto_toggle_mtime = mtime
 
     def _normalize_actions(self, actions: Iterable[Any]) -> List[Dict[str, int]]:
         normalized: List[Dict[str, int]] = []
@@ -484,6 +508,7 @@ class PokemonStateStreamer:
                     self._prev_game_state = state
                 self._update_map_learning(state)
                 self.publish_state(state)
+                self._refresh_auto_toggle()
 
                 actions = self.gather_actions(state)
                 self.apply_actions(actions)
@@ -552,6 +577,11 @@ def parse_args() -> argparse.Namespace:
         help="How long to keep each button pressed before auto-release",
     )
     parser.add_argument(
+        "--auto-control",
+        default="auto_control.json",
+        help="Path to a JSON file used to toggle auto actions at runtime",
+    )
+    parser.add_argument(
         "--disable-auto-actions",
         action="store_true",
         help="Disable built-in overworld/battle inputs so only external commands run",
@@ -566,6 +596,7 @@ def main() -> None:
     state_out_path = Path(args.state_out).expanduser().resolve() if args.state_out else None
     actions_in_path = Path(args.actions_in).expanduser().resolve() if args.actions_in else None
     save_path = Path(args.save).expanduser().resolve() if args.save else None
+    auto_toggle_path = Path(args.auto_control).expanduser().resolve() if args.auto_control else None
 
     if not rom_path.exists():
         raise FileNotFoundError(f"ROM not found: {rom_path}")
@@ -585,6 +616,7 @@ def main() -> None:
         save_path=save_path,
         hold_frames=hold_frames,
         auto_actions=not args.disable_auto_actions,
+        auto_toggle_path=auto_toggle_path,
     )
     streamer.run()
 

@@ -61,10 +61,26 @@ def parse_args():
         help="Path to the actions JSON file that state_stream.py watches",
     )
     parser.add_argument(
+        "--auto-control",
+        default="auto_control.json",
+        help="Path to the auto-action toggle JSON file",
+    )
+    parser.add_argument(
         "--frame",
         type=int,
         default=None,
         help="Optional frame number to include. Defaults to current epoch ms so it's always increasing.",
+    )
+    toggle_group = parser.add_mutually_exclusive_group()
+    toggle_group.add_argument(
+        "--enable-auto",
+        action="store_true",
+        help="Enable state_stream auto actions via the auto-control file",
+    )
+    toggle_group.add_argument(
+        "--disable-auto",
+        action="store_true",
+        help="Disable state_stream auto actions via the auto-control file",
     )
     return parser.parse_args()
 
@@ -149,8 +165,27 @@ def main():
         save_macros(macro_path, macros)
         return
 
+    control_written = False
+    control_path = Path(args.auto_control).expanduser().resolve()
+    if args.enable_auto or args.disable_auto:
+        value = True if args.enable_auto else False
+        control_payload = {
+            "auto_enabled": value,
+            "timestamp": time.time(),
+        }
+        control_path.parent.mkdir(parents=True, exist_ok=True)
+        control_path.write_text(json.dumps(control_payload))
+        state = "enabled" if value else "disabled"
+        print(f"Set auto-actions {state} via {control_path}")
+        control_written = True
+
     if args.macro and args.macro not in macros:
         raise SystemExit(f"Macro '{args.macro}' not defined. Use --define-macro or edit {macro_path}")
+
+    if not args.actions and not args.macro:
+        if control_written:
+            return
+        raise SystemExit("Provide actions or choose --macro")
 
     actions_payload = build_actions(args, macros)
     frame = args.frame if args.frame is not None else int(time.time() * 1000)
