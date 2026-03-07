@@ -26,12 +26,18 @@ import json
 import os
 import signal
 import time
+import importlib
+import pkgutil
+import sys
 from dataclasses import dataclass, asdict
 from pathlib import Path
 from typing import Any, Deque, Dict, Iterable, List, Optional, Protocol, Tuple
 from collections import deque
 
 from pyboy import PyBoy
+
+if __name__ == "__main__":
+    sys.modules.setdefault("state_stream", sys.modules[__name__])
 
 try:
     from pyboy import WindowEvent
@@ -52,7 +58,7 @@ STATE_ADDRESSES: Dict[str, int] = {
     "party1_max_hp_hi": 0xD16D,
     # Additional state bytes
     "game_state": 0xD730,
-    "text_box_id": 0xCFC6,
+    "text_box_id": 0xCFC4,
     "joy_ignore": 0xCFC8,
     "player_direction": 0xD05B,
     "party_count": 0xD163,
@@ -195,6 +201,7 @@ class PokemonStateStreamer:
         signal.signal(signal.SIGTERM, self._close_on_signal)
 
         self._register_builtin_abilities()
+        self._load_external_abilities()
 
     def register_ability(self, ability: Ability) -> None:
         self._abilities[ability.name] = ability
@@ -205,6 +212,26 @@ class PokemonStateStreamer:
     def _register_builtin_abilities(self) -> None:
         self.register_ability(BattleDefaultAbility())
         self.register_ability(OverworldExploreAbility())
+
+    def _load_external_abilities(self) -> None:
+        abilities_pkg_path = Path(__file__).with_name("abilities")
+        if not abilities_pkg_path.exists():
+            return
+        for module_info in pkgutil.iter_modules([str(abilities_pkg_path)]):
+            if module_info.name.startswith("_"):
+                continue
+            module_name = f"abilities.{module_info.name}"
+            try:
+                module = importlib.import_module(module_name)
+            except Exception as exc:
+                print(f"[state_stream] Failed to import {module_name}: {exc}")
+                continue
+            register_fn = getattr(module, "register", None)
+            if callable(register_fn):
+                try:
+                    register_fn(self)
+                except Exception as exc:
+                    print(f"[state_stream] Ability register() failed for {module_name}: {exc}")
 
     def _tile_key(self, map_id: int, x: int, y: int) -> str:
         return f"{map_id}:{x}:{y}"
