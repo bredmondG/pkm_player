@@ -184,8 +184,10 @@ class PokemonStateStreamer:
         self._prev_game_state: Optional[GameState] = None
         self._recent_tiles: Deque[str] = deque(maxlen=200)
         self.map_learning_path = Path("map_learning.json")
-        self._map_graph: Dict[str, Dict[str, Dict[str, int]]] = self._load_map_learning()
+        self._map_graph, self._blocked_edges = self._load_map_learning()
         self._map_dirty = False
+        self._last_map_save_frame = 0
+        self._last_move_attempt: Optional[Tuple[str, str]] = None
 
         self._abilities: Dict[str, Ability] = {}
         self._ability_order: List[str] = []
@@ -236,21 +238,58 @@ class PokemonStateStreamer:
     def _tile_key(self, map_id: int, x: int, y: int) -> str:
         return f"{map_id}:{x}:{y}"
 
-    def _load_map_learning(self) -> Dict[str, Dict[str, Dict[str, int]]]:
+    def _load_map_learning(self) -> Tuple[Dict[str, Dict[str, Dict[str, int]]], Dict[str, Dict[str, int]]]:
         path = self.map_learning_path
         if path.exists():
             try:
                 data = json.loads(path.read_text())
-                return data
+                if isinstance(data, dict) and "tiles" in data:
+                    tiles = data.get("tiles", {})
+                    blocked = data.get("blocked", {})
+                else:
+                    tiles = data
+                    blocked = {}
+                return tiles, blocked
             except json.JSONDecodeError:
                 print(f"[state_stream] Failed to parse {path}, starting fresh")
-        return {}
+        return {}, {}
 
     def _save_map_learning(self) -> None:
         if not self._map_dirty:
             return
-        self.map_learning_path.write_text(json.dumps(self._map_graph, indent=2))
+        payload = {"tiles": self._map_graph, "blocked": self._blocked_edges}
+        self.map_learning_path.write_text(json.dumps(payload, indent=2))
         self._map_dirty = False
+
+    def _maybe_flush_map_learning(self) -> None:
+        if not self._map_dirty:
+            return
+        if self._frame - self._last_map_save_frame < self.frames_per_tick * 5:
+            return
+        try:
+            self._save_map_learning()
+            self._last_map_save_frame = self._frame
+            print(f"[state_stream] Autosaved map_learning at frame {self._frame}")
+        except Exception as exc:
+            print(f"[state_stream] Failed to autosave map_learning: {exc}")
+
+    def _note_move_attempt(self, tile_key: str, direction: str) -> None:
+        if direction in {"UP", "DOWN", "LEFT", "RIGHT"}:
+            self._last_move_attempt = (tile_key, direction)
+
+    def _record_stagnation(self, tile_key: str) -> None:
+        if not self._last_move_attempt:
+            return
+        last_tile, direction = self._last_move_attempt
+        if last_tile != tile_key:
+            return
+        blocked = self._blocked_edges.setdefault(tile_key, {})
+        blocked[direction] = blocked.get(direction, 0) + 1
+        self._map_dirty = True
+
+    def _direction_blocked(self, tile_key: str, direction: str) -> bool:
+        blocked = self._blocked_edges.get(tile_key, {})
+        return blocked.get(direction, 0) > 0
 
     def _refresh_auto_toggle(self) -> None:
         if not self.auto_toggle_path:
@@ -534,6 +573,7 @@ class PokemonStateStreamer:
                 self._update_map_learning(state)
                 self.publish_state(state)
                 self._refresh_auto_toggle()
+                self._maybe_flush_map_learning()
 
                 actions = self.gather_actions(state)
                 self.apply_actions(actions)
@@ -607,28 +647,61 @@ class OverworldExploreAbility:
         )
 
         tile_key = streamer._tile_key(state.map_id, state.player_x, state.player_y)
+        tile_desc = f"map {state.map_id} ({state.player_x},{state.player_y})"
         if stagnated:
+            streamer._record_stagnation(tile_key)
             print(
-                f"[state_stream] Frame {streamer._frame}: overworld stagnation detected, rotating direction"
+                f"[ability:overworld_explore] Frame {streamer._frame}: stagnated at {tile_desc}, rotating direction cycle"
             )
             preferred = streamer._choose_known_direction(tile_key)
             if preferred:
+                print(
+                    f"[ability:overworld_explore] taking learned direction {preferred} to escape stagnation"
+                )
+                streamer._note_move_attempt(tile_key, preferred)
                 return AbilityResult(actions=[preferred])
             streamer._overworld_direction_cycle.rotate(-1)
             streamer._position_history.clear()
+            print(
+                f"[ability:overworld_explore] rotated cycle -> {list(streamer._overworld_direction_cycle)}"
+            )
 
         neighbors = streamer._map_graph.get(tile_key, {})
         for direction in list(streamer._overworld_direction_cycle):
-            if direction not in neighbors:
+            if direction not in neighbors and not streamer._direction_blocked(tile_key, direction):
+                print(
+                    f"[ability:overworld_explore] exploring unknown direction {direction} from {tile_desc}"
+                )
+                streamer._note_move_attempt(tile_key, direction)
                 return AbilityResult(actions=[direction])
 
         if streamer._frame % 180 == 0:
+            print(f"[ability:overworld_explore] interact pulse at {tile_desc}")
             return AbilityResult(actions=["A"])
         if neighbors:
             preferred = streamer._choose_known_direction(tile_key)
-            if preferred:
+            if preferred and not streamer._direction_blocked(tile_key, preferred):
+                dest = neighbors.get(preferred)
+                if dest:
+                    dest_desc = f"map {dest['map_id']} ({dest['x']},{dest['y']})"
+                else:
+                    dest_desc = "unknown"
+                print(
+                    f"[ability:overworld_explore] following learned edge {preferred} -> {dest_desc}"
+                )
+                streamer._note_move_attempt(tile_key, preferred)
                 return AbilityResult(actions=[preferred])
-        return AbilityResult(actions=[streamer._overworld_direction_cycle[0]])
+        for candidate in streamer._overworld_direction_cycle:
+            if not streamer._direction_blocked(tile_key, candidate):
+                next_dir = candidate
+                break
+        else:
+            next_dir = streamer._overworld_direction_cycle[0]
+        print(
+            f"[ability:overworld_explore] defaulting to cycle direction {next_dir} from {tile_desc}"
+        )
+        streamer._note_move_attempt(tile_key, next_dir)
+        return AbilityResult(actions=[next_dir])
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run Pokémon Red and stream state snapshots.")
