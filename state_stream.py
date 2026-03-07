@@ -28,8 +28,7 @@ import signal
 import time
 from dataclasses import dataclass, asdict
 from pathlib import Path
-from typing import Any, Deque, Dict, Iterable, List, Optional, Tuple
-from collections import defaultdict
+from typing import Any, Deque, Dict, Iterable, List, Optional, Protocol, Tuple
 from collections import deque
 
 from pyboy import PyBoy
@@ -107,6 +106,23 @@ class GameState:
     input_locked: bool
 
 
+@dataclass
+class AbilityResult:
+    actions: List[str]
+    cooldown_frames: int = 0
+
+
+class Ability(Protocol):
+    name: str
+    priority: int
+
+    def should_run(self, state: GameState, streamer: "PokemonStateStreamer") -> bool:
+        ...
+
+    def run(self, state: GameState, streamer: "PokemonStateStreamer") -> AbilityResult:
+        ...
+
+
 class PokemonStateStreamer:
     def __init__(
         self,
@@ -154,6 +170,7 @@ class PokemonStateStreamer:
         self._last_action_frame = -1
         self._next_auto_action_frame = 0
         self._last_action_source: Optional[str] = None
+        self._last_action_auto = False
         self._pending_press_logs: List[tuple[int, str, int]] = []
         self._position_history: Deque[tuple[int, int]] = deque(maxlen=30)
         self._overworld_direction_cycle = deque(["RIGHT", "UP", "LEFT", "DOWN"])
@@ -164,6 +181,9 @@ class PokemonStateStreamer:
         self._map_graph: Dict[str, Dict[str, Dict[str, int]]] = self._load_map_learning()
         self._map_dirty = False
 
+        self._abilities: Dict[str, Ability] = {}
+        self._ability_order: List[str] = []
+
         # Make sure log directory exists
         self.log_path.parent.mkdir(parents=True, exist_ok=True)
         self._log_file = self.log_path.open("a", buffering=1)
@@ -173,6 +193,18 @@ class PokemonStateStreamer:
 
         signal.signal(signal.SIGINT, self._close_on_signal)
         signal.signal(signal.SIGTERM, self._close_on_signal)
+
+        self._register_builtin_abilities()
+
+    def register_ability(self, ability: Ability) -> None:
+        self._abilities[ability.name] = ability
+        self._ability_order = sorted(
+            self._abilities.keys(), key=lambda name: self._abilities[name].priority
+        )
+
+    def _register_builtin_abilities(self) -> None:
+        self.register_ability(BattleDefaultAbility())
+        self.register_ability(OverworldExploreAbility())
 
     def _tile_key(self, map_id: int, x: int, y: int) -> str:
         return f"{map_id}:{x}:{y}"
@@ -406,69 +438,35 @@ class PokemonStateStreamer:
             pass
         return actions
 
-    def _overworld_actions(self, state: GameState) -> List[str]:
-        self._position_history.append((state.player_x, state.player_y))
-        stagnated = len(set(self._position_history)) <= 2 and len(self._position_history) == self._position_history.maxlen
-
-        tile_key = self._tile_key(state.map_id, state.player_x, state.player_y)
-        if stagnated:
-            print(f"[state_stream] Frame {self._frame}: overworld stagnation detected, rotating direction")
-            preferred = self._choose_known_direction(tile_key)
-            if preferred:
-                return [preferred]
-            self._overworld_direction_cycle.rotate(-1)
-            self._position_history.clear()
-
-        # Prefer exploring unknown directions first, using the current cycle order
-        neighbors = self._map_graph.get(tile_key, {})
-        for direction in list(self._overworld_direction_cycle):
-            if direction not in neighbors:
-                return [direction]
-
-        # Alternate between walking and tapping A every few frames to interact
-        if self._frame % 180 == 0:
-            return ["A"]
-        if neighbors:
-            preferred = self._choose_known_direction(tile_key)
-            if preferred:
-                return [preferred]
-        return [self._overworld_direction_cycle[0]]
-
-    def _battle_actions(self, state: GameState) -> List[str]:
-        # Simple scripted cycle that repeatedly chooses Fight -> first move -> mash through text
-        sequence = [
-            ["A"],  # advance dialog / choose Fight
-            ["A"],  # confirm move
-            ["A"],  # attack / confirm
-            ["A"],  # advance text
-            ["A"],
-        ]
-        if state.party1_hp < max(5, int(state.party1_max_hp * 0.3)):
-            sequence = [["B"], ["DOWN"], ["A"], ["A"], ["A"]]  # attempt to run
-
-        actions = sequence[self._battle_step % len(sequence)]
-        self._battle_step += 1
-        return actions
-
-    def default_actions(self, state: GameState) -> List[str]:
-        if state.in_battle:
-            return self._battle_actions(state)
-        self._battle_step = 0
-        return self._overworld_actions(state)
 
     def gather_actions(self, state: GameState) -> List[str]:
         external = self.read_external_actions()
         if external:
             print(f"[state_stream] Applying external actions at frame {state.frame}: {external}")
             self._last_action_source = "external"
+            self._last_action_auto = False
             return external
         if not self.auto_actions_enabled:
             return []
         if self._frame < self._next_auto_action_frame:
             return []
-        actions = self.default_actions(state)
-        self._last_action_source = "auto" if actions else None
-        return actions
+
+        if not state.in_battle:
+            self._battle_step = 0
+
+        for name in self._ability_order:
+            ability = self._abilities[name]
+            if not ability.should_run(state, self):
+                continue
+            result = ability.run(state, self)
+            if not result.actions:
+                continue
+            self._last_action_source = ability.name
+            self._last_action_auto = True
+            if result.cooldown_frames:
+                self._next_auto_action_frame = self._frame + result.cooldown_frames
+            return result.actions
+        return []
 
     def apply_actions(self, actions: Iterable[Any]) -> None:
         specs = self._normalize_actions(actions)
@@ -490,7 +488,7 @@ class PokemonStateStreamer:
             target_frame = base_frame + press_delay
             self._pending_press_logs.append((target_frame, button, hold_frames))
             max_end_delay = max(max_end_delay, press_delay + hold_frames)
-        if self._last_action_source == "auto":
+        if self._last_action_auto:
             self._next_auto_action_frame = base_frame + max_end_delay
 
     def run(self) -> None:
@@ -542,6 +540,68 @@ class PokemonStateStreamer:
         if not self._log_file.closed:
             self._log_file.close()
 
+
+
+
+class BattleDefaultAbility:
+    name = "battle_default"
+    priority = 10
+
+    def should_run(self, state: GameState, streamer: "PokemonStateStreamer") -> bool:
+        return state.in_battle
+
+    def run(self, state: GameState, streamer: "PokemonStateStreamer") -> AbilityResult:
+        sequence = [
+            ["A"],
+            ["A"],
+            ["A"],
+            ["A"],
+            ["A"],
+        ]
+        if state.party1_hp < max(5, int(state.party1_max_hp * 0.3)):
+            sequence = [["B"], ["DOWN"], ["A"], ["A"], ["A"]]
+        actions = sequence[streamer._battle_step % len(sequence)]
+        streamer._battle_step += 1
+        return AbilityResult(actions=list(actions))
+
+
+class OverworldExploreAbility:
+    name = "overworld_explore"
+    priority = 100
+
+    def should_run(self, state: GameState, streamer: "PokemonStateStreamer") -> bool:
+        return not state.in_battle
+
+    def run(self, state: GameState, streamer: "PokemonStateStreamer") -> AbilityResult:
+        streamer._position_history.append((state.player_x, state.player_y))
+        stagnated = (
+            len(set(streamer._position_history)) <= 2
+            and len(streamer._position_history) == streamer._position_history.maxlen
+        )
+
+        tile_key = streamer._tile_key(state.map_id, state.player_x, state.player_y)
+        if stagnated:
+            print(
+                f"[state_stream] Frame {streamer._frame}: overworld stagnation detected, rotating direction"
+            )
+            preferred = streamer._choose_known_direction(tile_key)
+            if preferred:
+                return AbilityResult(actions=[preferred])
+            streamer._overworld_direction_cycle.rotate(-1)
+            streamer._position_history.clear()
+
+        neighbors = streamer._map_graph.get(tile_key, {})
+        for direction in list(streamer._overworld_direction_cycle):
+            if direction not in neighbors:
+                return AbilityResult(actions=[direction])
+
+        if streamer._frame % 180 == 0:
+            return AbilityResult(actions=["A"])
+        if neighbors:
+            preferred = streamer._choose_known_direction(tile_key)
+            if preferred:
+                return AbilityResult(actions=[preferred])
+        return AbilityResult(actions=[streamer._overworld_direction_cycle[0]])
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run Pokémon Red and stream state snapshots.")
